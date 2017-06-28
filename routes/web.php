@@ -13,7 +13,7 @@
 
 
 
-Route::get('/',"Home\IndexController@index");//加载前台首页模板
+
 
 Route::get('/home/login',"Home\LoginController@login");//加载前台登录界面
 Route::post('/home/dologin',"Home\LoginController@doLogin"); //执行前台登录
@@ -27,7 +27,8 @@ Route::get('/admin/getcode',"Admin\LoginController@getCode");//加载验证码
 
 //建立前台路由组  
 Route::group(['prefix' => 'home','middleware' => 'home'], function () {
-    Route::get('personal',"Home\PersonalController@index");//加载前台个人中心界面
+    Route::get('/',"Home\IndexController@index");//加载前台首页模板
+	Route::get('personal',"Home\PersonalController@index");//加载前台个人中心界面
 });
 
 //建立后台路由组

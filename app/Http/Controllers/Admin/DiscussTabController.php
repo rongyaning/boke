@@ -22,7 +22,7 @@ class DiscusstabController extends Controller
       
        //遍历当前数据并添加评论名称
      
-       return view("admin.Discusstab.index",['list'=>$list]);
+       return view("admin.discusstab.index",['list'=>$list]);
 		//return view("admin.ping.index");
     }
 
