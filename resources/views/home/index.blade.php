@@ -585,20 +585,20 @@
                                              src="{{asset('imges/24442-20170622211528820-758499309.jpg')}}"
                                              alt="优达学城_FaceBook_0623"></a></div>
 
-											 
-				 
-					<form action="" method="get" enctype="multipart/form-data">
+                                             
+                 
+                    <form action="" method="get" enctype="multipart/form-data">
                    
                       头像:<input type="file" name="pic" value="头像"/><br/><br/>  
-					  姓名:<input type="name" name="uname" style="border:none"/><br/><br/> 
-					  博客年龄:<input type="date" name="enrolltime"/><br/> <br/>
-					
+                      姓名:<input type="name" name="uname" style="border:none"/><br/><br/> 
+                      博客年龄:<input type="date" name="enrolltime"/><br/> <br/>
+                    
                     </form>
-				
+                
             </div>
-					
+                    
         </div>
-				
+                
     </div>
     
     <div id="footer">
