@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +15,7 @@ class IndexController extends Controller
      */
     public function index()
     {
-        //
+        
 		return view("Home.index");
     }
 
@@ -83,4 +84,5 @@ class IndexController extends Controller
     {
         //
     }
+
 }
