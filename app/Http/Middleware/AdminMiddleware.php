@@ -15,11 +15,6 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-<<<<<<< HEAD
-	
-	    return $next($request);
-=======
         return $next($request);
->>>>>>> 7dfce4710639d5cb3a32ebcfb3a89f7ccc924942
     }
 }

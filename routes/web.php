@@ -42,9 +42,9 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     Route::resource('article',"Admin\ArticleController");//后台文章表管理
     Route::resource('contents',"Admin\ContentsController");//后台文章内容管理
     Route::resource('articletype',"Admin\ArticletypeController");//后台文章类别
-    Route::resource('discusstab',"Admin\DiscusstabController");//后台评论表管理
+    Route::resource('discussTab',"Admin\DiscusstabController");//后台评论表管理
     Route::resource('article_discussTab',"Admin\Article_discussTabController");//文章评论表
     Route::resource('collection',"Admin\CollectionController");//收藏
     Route::resource('log',"Admin\LogController");//日志
-    Route::resource('adminor',"Admin\AdminorController");//管理员
+    Route::resource('adminer',"Admin\AdminerController");//管理员
 });

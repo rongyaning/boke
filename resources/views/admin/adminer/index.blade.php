@@ -3,12 +3,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            文章类别表
+            管理员信息
             <small>preview of simple tables</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="#">商品信息</a></li>
+            <li><a href="#">管理员信息</a></li>
             <li class="active">列表</li>
           </ol>
         </section>
@@ -19,7 +19,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title"><i class="fa fa-th"></i> 文章类别管理</h3>
+                  <h3 class="box-title"><i class="fa fa-th"></i> 管理员信息</h3>
                   <div class="box-tools">
                     <form action="{{url('admin/stu')}}" method="get">
                     <div class="input-group" style="width: 150px;">
@@ -36,18 +36,23 @@
                     <tr>
                       <th style="width:160px">ID</th>
                       
-                      <th>文章类别</th>
+                      <th>管理员账号</th>
+                      <th>管理员登录时间</th>
+                      <th>管理员登陆IP</th>
+                      
                      
                       <th style="width: 150px">操作</th>
                     </tr>
                     @foreach($list as $v)
                     <tr>
                       <td>{{$v->id}}</td>
-                      <td>{{$v->title}}</td>
+                      <td>{{$v->account}}</td>
+                      <td>{{$v->loginTime}}</td>
+                      <td>{{$v->loginIP}}</td>
                       
                       <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
                       <button class="btn btn-xs btn-primary">编辑</button> 
-                      <button class="btn btn-xs btn-primary">添加子栏目</button>
+                      
                       </td>
                     </tr>
                     @endforeach
