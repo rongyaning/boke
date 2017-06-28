@@ -49,7 +49,7 @@
                       <td>{{$v->userid}}</td>
                       <td>{{$v->status}}</td>  
                       <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
-                      <button class="btn btn-xs btn-primary"><a href="{{url('admin/Discusstab/create')}}">详情</a></button> </td>
+                      <a href="{{url('admin/discusstab/create')}}">详情</a> </td>
                     </tr>
                     @endforeach
                   
