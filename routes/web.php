@@ -17,18 +17,14 @@ Route::get('/', function () {
 });
 
 
+Route::get('/home/lists',"Home\ListController@lists");//加载前台文章列表页
+Route::get('/home/detail',"Home\DetailController@detail");//加载前台文章详情页
+
 
 Route::get('/admin/login',"Admin\LoginController@login");//加载后台登录界面
 Route::post('/admin/dologin',"Admin\LoginController@doLogin"); //执行后台登录
 Route::get('/admin/logout',"Admin\LoginController@logout"); //执行退出
 Route::get('/admin/getcode',"Admin\LoginController@getCode");//加载验证码
-
-
-//建立前台路由组  
-Route::group(['prefix' => 'home','middleware' => 'home'], function () {
-    Route::get('/',"Home\IndexController@index");//前台首页路由
-    
-});
 
 
 //建立后台路由组
