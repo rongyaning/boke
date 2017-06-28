@@ -378,8 +378,7 @@
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-share"></i> <span>日志管理</span>
-              
-              </a>
+             </a>
               
             </li>
           
