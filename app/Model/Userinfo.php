@@ -8,5 +8,5 @@ class Userinfo extends Model
 {
     protected $table = 'userinfo';
 
-   
+
 }
