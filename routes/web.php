@@ -16,20 +16,25 @@
 Route::get('/', function () {
     return view('welcome');
 });
- 
-//建立后台路由组
-Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
-    Route::get('/',"Admin\IndexController@index"); //后台首页
-    Route::resource('Articletype', 'Admin\ArticletypeController'); //后台商品类别管理
-});
+
 Route::get('/home/login',"Home\LoginController@login");//加载前台登录界面
 Route::post('/home/dologin',"Home\LoginController@doLogin"); //执行前台登录
 Route::get('/home/logout',"Home\LoginController@logout"); //执行退出
 Route::get('/home/getcode',"Home\LoginController@getCode");//加载验证码
+
 Route::get('/admin/login',"Admin\LoginController@login");//加载后台登录界面
 Route::post('/admin/dologin',"Admin\LoginController@doLogin"); //执行后台登录
 Route::get('/admin/logout',"Admin\LoginController@logout"); //执行退出
 Route::get('/admin/getcode',"Admin\LoginController@getCode");//加载验证码
+
+
+//建立前台路由组  
+Route::group(['prefix' => 'home','middleware' => 'home'], function () {
+    Route::get('/',"Home\IndexController@index");//前台首页路由
+    
+});
+
+
 //建立后台路由组
 Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     Route::get('/',"Admin\IndexController@index"); //后台首页路由
