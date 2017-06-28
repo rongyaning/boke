@@ -371,7 +371,6 @@
 
                 <li><a href="{{URL('admin/discussTab')}}"><i class="fa fa-circle-o"></i> 评论管理</a></li>
 				<li><a href="{{URL('admin/collection')}}"><i class="fa fa-circle-o"></i> 收藏管理</a></li>
-
               
               </ul>
             </li>
