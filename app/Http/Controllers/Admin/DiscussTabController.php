@@ -1,13 +1,12 @@
 <?php
 
-//后台首页控制器
 namespace App\Http\Controllers\Admin;
-
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\DiscussTab;
 
-class IndexController extends Controller
+class DiscussTabController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,15 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view("Admin.index");
+        //
+		
+       
+       $list = DiscussTab::get(); //5条每页浏览
+      
+       //遍历当前数据并添加评论名称
+     
+       return view("admin.DiscussTab.index",['list'=>$list]);
+		//return view("admin.ping.index");
     }
 
     /**
@@ -84,5 +91,4 @@ class IndexController extends Controller
     {
         //
     }
-
 }

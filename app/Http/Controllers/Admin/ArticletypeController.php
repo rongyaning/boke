@@ -17,12 +17,8 @@ class ArticletypeController extends Controller
     public function index()
     {
         $list = Articletype::get();
-        //echo "<pre>";
-        //var_dump($list);
-        //die();
-        //5条每页浏览
         
-       return view("admin.Articletype.index",['list'=>$list]);
+        return view("admin.Articletype.index",['list'=>$list]);
     }
 
     /**

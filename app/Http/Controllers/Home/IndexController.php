@@ -1,8 +1,6 @@
 <?php
 
-//后台首页控制器
-namespace App\Http\Controllers\Admin;
-
+namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,7 +14,8 @@ class IndexController extends Controller
      */
     public function index()
     {
-        return view("Admin.index");
+        //
+		return view("Home.index");
     }
 
     /**
@@ -84,5 +83,4 @@ class IndexController extends Controller
     {
         //
     }
-
 }

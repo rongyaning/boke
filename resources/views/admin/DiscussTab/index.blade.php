@@ -3,14 +3,11 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            文章类别表
+            信息输出表
             <small>preview of simple tables</small>
           </h1>
-          <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="#">商品信息</a></li>
-            <li class="active">列表</li>
-          </ol>
+          
+		  
         </section>
 
         <!-- Main content -->
@@ -19,9 +16,9 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title"><i class="fa fa-th"></i> 文章类别管理</h3>
+                  <h3 class="box-title"><i class="fa fa-th"></i> 评论信息管理</h3>
                   <div class="box-tools">
-                    <form action="{{url('admin/stu')}}" method="get">
+                    <form action="" method="get">
                     <div class="input-group" style="width: 150px;">
                       <input type="text" name="name" class="form-control input-sm pull-right" placeholder="学员姓名"/>
                       <div class="input-group-btn">
@@ -34,17 +31,23 @@
                 <div class="box-body">
                   <table class="table table-bordered">
                     <tr>
-                      <th style="width:160px">ID</th>
-                      
-                      <th>文章类别</th>
-                     
-                      <th style="width: 150px">操作</th>
+                      <th style="width:60px">ID</th>
+                      <th>评论id</th>
+                      <th>对应文章</th>
+                      <th>评论内容</th>
+                      <th>评论时间</th>
+                      <th>被评论人</th>
+                      <th>状态</th>     
+                      <th style="width: 100px">操作</th>
                     </tr>
-                    @foreach($list as $v)
+                 @foreach($list as $v)
                     <tr>
                       <td>{{$v->id}}</td>
-                      <td>{{$v->title}}</td>
-                      
+                      <td>{{$v->articleid}}</td>
+                      <td>{{$v->content}}</td>       
+                      <td>{{$v->disTime}}</td>
+                      <td>{{$v->userid}}</td>
+                      <td>{{$v->status}}</td>  
                       <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
                       <button class="btn btn-xs btn-primary">编辑</button> </td>
                     </tr>
@@ -54,7 +57,7 @@
                   </table>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
-                 
+             
                 </div>
               </div><!-- /.box -->
 
@@ -76,7 +79,7 @@
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
-                    $("#mydeleteform").attr("action","{{url('admin/goods')}}/"+id).submit(); 
+                    $("#mydeleteform").attr("action","/"+id).submit(); 
                 }
             }
       </script>
