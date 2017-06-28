@@ -587,13 +587,7 @@
 
                                              
                  
-                    <form action="" method="get" enctype="multipart/form-data">
-                   
-                      头像:<input type="file" name="pic" value="头像"/><br/><br/>  
-                      姓名:<input type="name" name="uname" style="border:none"/><br/><br/> 
-                      博客年龄:<input type="date" name="enrolltime"/><br/> <br/>
                     
-                    </form>
                 
             </div>
                     
