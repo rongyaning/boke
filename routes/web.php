@@ -28,16 +28,16 @@ Route::get('/admin/logout',"Admin\LoginController@logout"); //执行退出
 Route::get('/admin/getcode',"Admin\LoginController@getCode");//加载验证码
 
 
-//建立前台路由组  
-Route::group(['prefix' => 'home','middleware' => 'home'], function () {
-    Route::get('/',"Home\IndexController@index");//前台首页路由
+//建立前台路由
+
+Route::get('/home/index',"Home\PersonalController@index");//加载前台个人中心界面
     
-});
+
 
 
 //建立后台路由组
 Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
-    Route::get('/',"Admin\IndexController@index"); //后台首页路由
+    Route::get('/',"Admin\IndexController@index"); //后台首页路由n
     Route::resource('userinfo',"Admin\UserinfoController"); //后台信息管理
     Route::resource('article',"Admin\ArticleController");//后台文章表管理
     Route::resource('contents',"Admin\ContentsController");//后台文章内容管理
