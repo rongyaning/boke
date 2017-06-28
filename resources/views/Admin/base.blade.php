@@ -360,8 +360,8 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="/DiscussTab"><i class="fa fa-circle-o"></i> 评论管理</a></li>
-				<li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> 收藏管理</a></li>
+                <li><a href="{{url('admin/Discusstab')}}"><i class="fa fa-circle-o"></i> 评论管理</a></li>
+				<li><a href="{{url('admin/Collection')}}"><i class="fa fa-circle-o"></i> 收藏管理</a></li>
               
               </ul>
             </li>

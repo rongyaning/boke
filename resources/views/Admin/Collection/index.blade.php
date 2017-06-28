@@ -3,7 +3,7 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            信息输出表
+            收藏信息
             <small>preview of simple tables</small>
           </h1>
           
@@ -16,9 +16,9 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title"><i class="fa fa-th"></i> 评论信息管理</h3>
+                  <h3 class="box-title"><i class="fa fa-th"></i>收藏信息管理</h3>
                   <div class="box-tools">
-                    <form action="{{url('admin/Discusstab')}}" method="get">
+                    <form action="{{url('admin/Collection')}}" method="get">
                     <div class="input-group" style="width: 150px;">
                       <input type="text" name="name" class="form-control input-sm pull-right" placeholder=""/>
                       <div class="input-group-btn">
@@ -31,28 +31,22 @@
                 <div class="box-body">
                   <table class="table table-bordered">
                     <tr>
-                      <th style="width:60px">ID</th>
-                      
-                      <th>对应文章</th>
-                      <th>评论内容</th>
-                      <th>评论时间</th>
-                      <th>被评论人</th>
-                      <th>状态</th>     
+						<th>id</th>
+                      <th>用户id</th>
+                      <th>文章id</th>     
+                      <th>文章内容</th>        
                       <th style="width: 100px">操作</th>
                     </tr>
                  @foreach($list as $v)
                     <tr>
                       <td>{{$v->id}}</td>
-                      <td>{{$v->articleid}}</td>
-                      <td>{{$v->content}}</td>       
-                      <td>{{$v->disTime}}</td>
                       <td>{{$v->userid}}</td>
-                      <td>{{$v->status}}</td>  
+                      <td>{{$v->ArticleId}}</td>       
+                      <td>{{$v->content}}</td>     
                       <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
-                      <button class="btn btn-xs btn-primary"><a href="{{url('admin/Discusstab/create')}}">详情</a></button> </td>
+                      <button class="btn btn-xs btn-primary">编辑</button> </td>
                     </tr>
                     @endforeach
-                  
                    
                   </table>
                 </div><!-- /.box-body -->
