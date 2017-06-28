@@ -4,9 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\DiscussTab;
 
-class DiscussTabController extends Controller
+use App\Model\Discusstab;
+
+class DiscusstabController extends Controller
+
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +18,13 @@ class DiscussTabController extends Controller
     public function index()
     {
         //
-		
-       
-       $list = DiscussTab::get(); //5条每页浏览
+
+       $list = Discusstab::get(); //5条每页浏览
       
        //遍历当前数据并添加评论名称
      
-       return view("admin.DiscussTab.index",['list'=>$list]);
+       return view("admin.Discusstab.index",['list'=>$list]);
+
 		//return view("admin.ping.index");
     }
 
@@ -34,6 +36,9 @@ class DiscussTabController extends Controller
     public function create()
     {
         //
+
+	
+
     }
 
     /**

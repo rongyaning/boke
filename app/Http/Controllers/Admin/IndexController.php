@@ -1,5 +1,6 @@
 <?php
 
+
 //后台首页控制器
 namespace App\Http\Controllers\Admin;
 
@@ -17,6 +18,7 @@ class IndexController extends Controller
     public function index()
     {
         return view("Admin.index");
+
     }
 
     /**
@@ -84,5 +86,4 @@ class IndexController extends Controller
     {
         //
     }
-
 }

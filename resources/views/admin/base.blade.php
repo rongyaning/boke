@@ -324,11 +324,13 @@
 
 		     <li class="treeview">
               <a href="{{URL('admin/userinfo')}}">
+
                <i class="fa fa-files-o"></i>
                 <span>用户信息</span>
                 
               </a>
             
+
           
             <li class="treeview">
               <a href="#">
@@ -342,6 +344,7 @@
               
               </ul>
             </li>
+
             <li class="treeview">
               <a href="#">
                 <i class="fa fa-pie-chart"></i>
@@ -349,7 +352,9 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+
                 <li><a href="{{URL('admin/articletype')}}"><i class="fa fa-circle-o"></i> 文章类别</a></li>
+
                 <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> 文章审核</a></li>
               
               </ul>
@@ -363,8 +368,10 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
+
                 <li><a href="{{URL('admin/discussTab')}}"><i class="fa fa-circle-o"></i> 评论管理</a></li>
-				<li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> 收藏管理</a></li>
+				<li><a href="{{URL('admin/collection')}}"><i class="fa fa-circle-o"></i> 收藏管理</a></li>
+
               
               </ul>
             </li>
