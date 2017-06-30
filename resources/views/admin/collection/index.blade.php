@@ -18,9 +18,9 @@
                 <div class="box-header with-border">
                   <h3 class="box-title"><i class="fa fa-th"></i>收藏信息管理</h3>
                   <div class="box-tools">
-                    <form action="{{url('admin/Collection')}}" method="get">
+                     <form action="{{url('admin/collection')}}" method="post">
                     <div class="input-group" style="width: 150px;">
-                      <input type="text" name="name" class="form-control input-sm pull-right" placeholder=""/>
+                      <input type="text" name="userid" class="form-control input-sm pull-right" placeholder="查找"/>
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </div>
@@ -33,25 +33,25 @@
                     <tr>
 						<th>id</th>
                       <th>用户id</th>
-                      <th>文章id</th>     
-                      <th>文章内容</th>        
+                      <th>文章id</th> 
+					  <th>文章内容</th>
                       <th style="width: 100px">操作</th>
                     </tr>
                  @foreach($list as $v)
                     <tr>
                       <td>{{$v->id}}</td>
-                      <td>{{$v->userid}}</td>
-                      <td>{{$v->ArticleId}}</td>       
-                      <td>{{$v->content}}</td>     
-                      <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
-                      <button class="btn btn-xs btn-primary">编辑</button> </td>
+                      <td>{{$v->userid}}</td>	
+                      <td>{{$v->ArticleId}}</td> 
+					<td>{{$v->content}}</td> 					  
+					   <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
+                     <button class="btn btn-xs btn-primary" onclick="window.location='{{URL('admin/collection')}}/{{ $v->id }}/edit'">编辑</button> </td>
                     </tr>
                     @endforeach
                    
                   </table>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
-             
+             {!! $list->appends($params)->render() !!}
                 </div>
               </div><!-- /.box -->
 
@@ -68,12 +68,11 @@
         </form>
     @endsection
     
-    
     @section("myscript")
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
-                    $("#mydeleteform").attr("action","/"+id).submit(); 
+                    $("#mydeleteform").attr("action","{{url('admin/collection')}}/"+id).submit(); 
                 }
             }
       </script>

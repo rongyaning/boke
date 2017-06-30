@@ -440,5 +440,13 @@
     
     <!-- AdminLTE 用于演示目的 -->
     <script src="{{asset('myadmin/dist/js/demo.js')}}" type="text/javascript"></script>
+	 @if(session("err"))
+        <script type="text/javascript">
+            Modal.alert({msg: "{{session('err')}}",title: ' 信息提示',btnok: '确定',btncl:'取消'});
+        </script>
+    @endif
+    
+    @yield('myscript')
   </body>
+  
 </html>

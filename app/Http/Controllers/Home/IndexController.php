@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Home;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+//use App\Http\Controllers\Home\userinfo;
 class IndexController extends Controller
 {
 
@@ -16,7 +16,12 @@ class IndexController extends Controller
     public function index()
     {
         //
-		return view("Home.index");
+		
+		//$list = userinfo::get()->find("uname");
+		$list = \DB::table("userinfo")->first();
+		//var_dump($list);die();
+		//return view("admin.Collection.index",["list"=>$list]);
+		return view("Home.index",["list"=>$list]);
     }
 
     /**
@@ -27,6 +32,7 @@ class IndexController extends Controller
     public function create()
     {
         //
+		
     }
 
     /**
