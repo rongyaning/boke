@@ -15,6 +15,7 @@ Route::get('/home/login',"Home\LoginController@login");//加载前台登录界�
 Route::post('/home/dologin',"Home\LoginController@doLogin"); //执行前台登录
 Route::get('/home/logout',"Home\LoginController@logout"); //执行退出
 Route::get('/home/getcode',"Home\LoginController@getCode");//加载验证码
+Route::get('/home/register',"Home\RegisterController@register");//加载前台注册页面
 
 Route::get('/admin/login',"Admin\LoginController@login");//加载后台登录界面
 Route::post('/admin/dologin',"Admin\LoginController@doLogin"); //执行后台登录
