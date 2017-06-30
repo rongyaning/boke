@@ -10,6 +10,6 @@ class ListController extends Controller
     //
     public function lists ()
     {
-        return view("home.list.lists");
+        return view("home.List.lists");
     }
 }

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-//use App\Http\Controllers\Home\userinfo;
-class IndexController extends Controller
-{
+use App\Model\Contents;
 
+class ContentsController extends Controller
+{
     /**
      * Display a listing of the resource.
      *
@@ -15,14 +15,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-
-		
-		//$list = userinfo::get()->find("uname");
-		$list = \DB::table("userinfo")->first();
-		//var_dump($list);die();
-		//return view("admin.Collection.index",["list"=>$list]);
-		return view("Home.index",["list"=>$list]);
-
+        //
+        $list = Contents::get();
+        return view("admin.Contents.index",["list"=>$list]);
     }
 
     /**
@@ -33,7 +28,6 @@ class IndexController extends Controller
     public function create()
     {
         //
-		
     }
 
     /**
@@ -91,5 +85,4 @@ class IndexController extends Controller
     {
         //
     }
-
 }
