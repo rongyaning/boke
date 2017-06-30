@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Home;
-
+use App\Model\Article;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,8 +15,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        //
-		return view("Home.index");
+        $list = Article::get();
+        return view("home.index",['list'=>$list]);
+		//return view("Home.index");
     }
 
     /**

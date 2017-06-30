@@ -1,5 +1,4 @@
-@extends('admin.base')
-    @section('content')
+    <?php $__env->startSection('content'); ?>
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
@@ -31,18 +30,18 @@
                       <th>班级</th>
                       <th style="width: 100px">操作</th>
                     </tr>
-                     @foreach($list as $v)
+                     <?php $__currentLoopData = $list; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $v): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <tr>
-                      <td>{{$v->id}}</td>
-                      <td>{{$v->articleid}}</td>
-                      <td>{{$v->content}}</td>       
-                      <td>{{$v->disTime}}</td>
-                      <td>{{$v->userid}}</td>
-                      <td>{{$v->status}}</td>  
-                      <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
+                      <td><?php echo e($v->id); ?></td>
+                      <td><?php echo e($v->articleid); ?></td>
+                      <td><?php echo e($v->content); ?></td>       
+                      <td><?php echo e($v->disTime); ?></td>
+                      <td><?php echo e($v->userid); ?></td>
+                      <td><?php echo e($v->status); ?></td>  
+                      <td><button onclick="doDel(<?php echo e($v->id); ?>)" class="btn btn-xs btn-danger">删除</button> 
                       <!--<button class="btn btn-xs btn-primary">编辑</button>--> </td>
                     </tr>
-                    @endforeach
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                    
                   </table>
                 </div><!-- /.box-body -->
@@ -70,15 +69,16 @@
             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
             <input type="hidden" name="_method" value="DELETE">
         </form>
-    @endsection
+    <?php $__env->stopSection(); ?>
     
     
-    @section("myscript")
+    <?php $__env->startSection("myscript"); ?>
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
-                    $("#mydeleteform").attr("action","{{url('admin/goods')}}/"+id).submit(); 
+                    $("#mydeleteform").attr("action","<?php echo e(url('admin/goods')); ?>/"+id).submit(); 
                 }
             }
       </script>
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

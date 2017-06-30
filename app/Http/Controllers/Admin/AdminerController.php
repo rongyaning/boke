@@ -28,7 +28,8 @@ class AdminerController extends Controller
      */
     public function create()
     {
-        return view("admin.Adminer.add");
+        
+        return view("admin.adminer.create");
     }
 
     /**
@@ -39,22 +40,38 @@ class AdminerController extends Controller
      */
     public function store(Request $request)
     {
+        
+		//$db = new Adminer;
         //表单验证
         $this->validate($request, [
-            'name' => 'required|max:16',
+            'account' => 'required|max:16',
+            'pass' => 'required|max:20|min:6',
         ]);
-       
-        //获取指定的部分数据
-        $data = $request->only("name","state");
-        $data['created_at'] = time();
-        $data['updated_at'] = time();
-        $id = Adminer::get()->insertGetId($data);
         
-        if($id>0){
-            return redirect('admin/role');
-        }else{
-           return back()->with("err","添加失败!");
-        }
+        //$db = new Adminer;
+        /* $db->account=$request->account;
+        $aa=$request->pass;
+        $db->pass = md5($aa);
+        $db->save(); */
+        
+        
+        //获取指定的部分数据
+        $data = $request->only("account","pass");
+        $data['pass'] = md5($data['pass']);
+        $data['addtime']=date("Y-m-d H:i:s",time());
+        //$db = new Adminer;
+      
+        $aa =Adminer::insertGetID($data); 
+        
+        
+      
+		/* $InsertNotice ->account =$request->account;
+		$InsertNotice ->pass = $request ->pass;
+		$InsertNotice->addtime=date("Y-m-d H:i:s",time());
+		$InsertNotice->save();
+		 */
+		return redirect("admin/adminer");
+  
     }
 
     /**
@@ -76,7 +93,8 @@ class AdminerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $list = Adminer::where('id','=',$id)->first();
+        return view("admin.adminer.edit",['list'=> $list]);
     }
 
     /**
@@ -88,7 +106,22 @@ class AdminerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      //  $input = $request->only(['account','pass','status']);
+          $adf = Adminer::find($id);
+          $adf->account = $request->account;
+          $aaaa = $request->pass;
+          $adf->pass= md5($aaaa);
+          $adf->status = $request->status;
+
+          $adf->save();
+        //$id = Adminer::where("id",$id)->update($input);
+        
+       /*  if($id>0){
+            echo "修改成功!";
+        }else{
+            echo "失败!";
+        } */
+        return redirect("admin/adminer");
     }
 
     /**
@@ -99,6 +132,9 @@ class AdminerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $db =new Adminer;
+        Adminer::where('id','=',$id)->delete();
+        //$db->delete($id);
+        return redirect("admin/adminer");
     }
 }

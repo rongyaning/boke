@@ -53,21 +53,15 @@
     </div>
     <div id="main">
         <div class="post_nav_block_wrapper">
-            <ul class="post_nav_block">
-                <li><a href="https://www.cnblogs.com/" class="current_nav">首页</a></li>
-                <li><a href="https://www.cnblogs.com/news/" title="新闻频道最新新闻">文章</a></li>  
-                <li><a href="https://www.cnblogs.com/aggsite/mycommented" title="我评论过的博文">我评</a></li>
-                <li><a href="https://www.cnblogs.com/aggsite/mydigged" title="我推荐过的博文">我赞</a></li>
-            </ul>
+          
             <div class="clear"></div>
         </div>
         <div class="rss_link" id="rss_block">
-            <span id="posts_refresh_tips"></span><a id="posts_refresh" href="https://www.cnblogs.com/#" class="refresh"
-                                                    title="刷新博文列表"
-                                                    onclick="aggSite.loadCategoryPostList();return false">刷新</a> <a
-                href="http://feed.cnblogs.com/blog/sitehome/rss"><img src="{{asset('imges/icon_rss.gif')}}"
-                                                                      alt="点击订阅" style="position:relative;top:2px;"
-                                                                      title="订阅博客园文章"></a></div>
+            <span id="posts_refresh_tips"></span>
+            <a id="posts_refresh" href="https://www.cnblogs.com/#" class="refresh" title="刷新博文列表" onclick="aggSite.loadCategoryPostList();return false">刷新</a> 
+            <a  href="http://feed.cnblogs.com/blog/sitehome/rss">
+            <img src="{{asset('imges/icon_rss.gif')}}" alt="点击订阅" style="position:relative;top:2px;" title="订阅博客园文章"></a>
+        </div>
        
 
 
@@ -76,190 +70,26 @@
 
         <div id="post_list">
 
-            <div class="post_item">
-                <div class="digg">
-                    <div class="diggit" onclick="DiggPost(&#39;sunsky303&#39;,7080165,120626,1)">
-                        <span class="diggnum" id="digg_count_7080165">1</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_7080165" class="digg_tip"></div>
-                </div>
-                <div class="post_item_body">
-                    <h3><a class="titlelnk" href="http://www.cnblogs.com/sunsky303/p/7080165.html" target="_blank">版本命名标准：语义化
-                        2.0.0</a></h3>
-                    <p class="post_item_summary">
-                        <a href="http://www.cnblogs.com/sunsky303/" target="_blank"><img width="48" height="48"
-                                                                                         class="pfs"
-                                                                                         src="{{asset('imges/20170329141435.png')}}"
-                                                                                         alt=""></a> 摘要
-                        版本格式：主版本号.次版本号.修订号，版本号递增规则如下： 主版本号：当你做了不兼容的 API 修改， 次版本号：当你做了向下兼容的功能性新增， 修订号：当你做了向下兼容的问题修正。
-                        先行版本号及版本编译信息可以加到“主版本号.次版本号.修订号”的后面，作为延伸。 简介 在软件管理的领域里存在 ...
-                    </p>
-                    <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/sunsky303/" class="lightblue">sunsky303</a>
-                        发布于 2017-06-26 13:48
-                        <span class="article_comment"><a
-                                href="http://www.cnblogs.com/sunsky303/p/7080165.html#commentform" title=""
-                                class="gray">
-        评论(0)</a></span><span class="article_view"><a href="http://www.cnblogs.com/sunsky303/p/7080165.html"
-                                                      class="gray">阅读(85)</a></span></div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            
-       
      
-        
-  
 
-
-
-            <div class="post_item">
-                <div class="digg">
-                    <div class="diggit" onclick="DiggPost(&#39;onlyac&#39;,7079441,263073,1)">
-                        <span class="diggnum" id="digg_count_7079441">0</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_7079441" class="digg_tip"></div>
-                </div>
+                @foreach($list as $v)
                 <div class="post_item_body">
-                    <h3><a class="titlelnk" href="http://www.cnblogs.com/onlyac/p/7079441.html" target="_blank">twemproxy代理主干流程——剖析twemproxy代码正编</a>
-                    </h3>
+                    <h3><a class="titlelnk" href="http://www.cnblogs.com/onepixel/p/7078617.html" target="_blank">{{$v->title}}</a></h3>
                     <p class="post_item_summary">
-                        <a href="http://www.cnblogs.com/onlyac/" target="_blank"><img width="48" height="48" class="pfs"
-                                                                                      src="{{asset('imges/20160817141154.png')}}"
-                                                                                      alt=""></a>
-                        在twemproxy的发送和接收流程剖析中，我们已经完全弄清楚twemproxy如何将客户端以及服务端发来的包切分成msg，获得一个独立的msg后twemproxy应该如何处理？这是本文这次需要重点介绍的内容。
-                        twemproxy的主干流程 图1 twemproxy的主干流程 如图1所示，twemp ...
+                        <a href="http://www.cnblogs.com/onepixel/" target="_blank">
+                        <img width="48" height="48" class="pfs" src="{{asset('imges/20151205235751.png')}}" alt=""></a>
+                        
                     </p>
                     <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/onlyac/" class="lightblue">我没货，只剩下水了</a>
-                        发布于 2017-06-26 10:42
-                        <span class="article_comment"><a href="http://www.cnblogs.com/onlyac/p/7079441.html#commentform"
-                                                         title="" class="gray">
-        评论(0)</a></span><span class="article_view"><a href="http://www.cnblogs.com/onlyac/p/7079441.html" class="gray">阅读(50)</a></span>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-    
-            <div class="post_item">
-                <div class="digg">
-                    <div class="diggit" onclick="DiggPost(&#39;cmt&#39;,7078883,39258,1)">
-                        <span class="diggnum" id="digg_count_7078883">1</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_7078883" class="digg_tip"></div>
-                </div>
-                <div class="post_item_body">
-                    <h3><a class="titlelnk" href="http://www.cnblogs.com/cmt/p/7078883.html" target="_blank">上周热点回顾（6.19-6.25）</a>
-                    </h3>
-                    <p class="post_item_summary">
-                        <a href="http://www.cnblogs.com/cmt/" target="_blank"><img width="48" height="48" class="pfs"
-                                                                                   src="{{asset('imges/20140318223943.png')}}"
-                                                                                   alt=""></a> 热点随笔： ·&nbsp;其实，我只想安静的写写代码...（飞不动）·&nbsp;我眼中的项目经理（悦光阴）·&nbsp;2017年前端框架、类库、工具大比拼（葡萄城控件技术团队）·&nbsp;.NET
-                        开发环境搭建（Alan_beijing）·&nbsp;Docker Machine 简介（sparkdev）·&nbsp;短信发送接口被恶意访问的网络攻击事 ...
-                    </p>
-                    <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/cmt/" class="lightblue">博客园团队</a>
-                        发布于 2017-06-26 08:11
-                        <span class="article_comment"><a href="http://www.cnblogs.com/cmt/p/7078883.html#commentform"
-                                                         title="2017-06-26 14:30" class="gray">
-        评论(3)</a></span><span class="article_view"><a href="http://www.cnblogs.com/cmt/p/7078883.html" class="gray">阅读(756)</a></span>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-
-            <div class="post_item">
-                <div class="digg">
-                    <div class="diggit" onclick="DiggPost(&#39;xiaohuochai&#39;,7072546,221787,1)">
-                        <span class="diggnum" id="digg_count_7072546">3</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_7072546" class="digg_tip"></div>
-                </div>
-                <div class="post_item_body">
-                    <h3><a class="titlelnk" href="http://www.cnblogs.com/xiaohuochai/p/7072546.html" target="_blank">CSS
-                        Why</a></h3>
-                    <p class="post_item_summary">
-                        <a href="http://www.cnblogs.com/xiaohuochai/" target="_blank"><img width="48" height="48"
-                                                                                           class="pfs"
-                                                                                           src="{{asset('imges/20150730225601.png')}}"
-                                                                                           alt=""></a> [1]Why CSS [2]Why
-                        选择器 [3]Why 层叠 [4]Why Hack [5]Why 伪类和伪元素 [6]Why 盒模型 [7]Why margin重叠 [8]Why auto [9]Why 行高和垂直对齐
-                        [10]Why 浮动 [11]Why BFC [11]Why 定位 [12]... ...
-                    </p>
-                    <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/xiaohuochai/" class="lightblue">小火柴的蓝色理想</a>
-                        发布于 2017-06-26 07:41
-                        <span class="article_comment"><a
-                                href="http://www.cnblogs.com/xiaohuochai/p/7072546.html#commentform" title=""
-                                class="gray">
-        评论(0)</a></span><span class="article_view"><a href="http://www.cnblogs.com/xiaohuochai/p/7072546.html"
-                                                      class="gray">阅读(208)</a></span></div>
-                </div>
-                <div class="clear"></div>
-            </div>
-
-            <div class="post_item">
-                <div class="digg">
-                    <div class="diggit" onclick="DiggPost(&#39;xiexj&#39;,7071939,334942,1)">
-                        <span class="diggnum" id="digg_count_7071939">7</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_7071939" class="digg_tip"></div>
-                </div>
-                <div class="post_item_body">
-                    <h3><a class="titlelnk" href="http://www.cnblogs.com/xiexj/p/7071939.html" target="_blank">架构师之路--搜索业务和技术介绍及容错机制</a>
-                    </h3>
-                    <p class="post_item_summary">
-                        <a href="http://www.cnblogs.com/xiexj/" target="_blank"><img width="48" height="48" class="pfs"
-                                                                                     src="{{asset('imges/20170601100852.png')}}"
-                                                                                     alt=""></a>
-                        今天和搜索部门一起做了一下MQ的迁移，顺便交流一下业务和技术。发现现在90后小伙都挺不错。我是指能力和探究心。我家男孩，不招女婿。
-                        在前面的文章中也提到，我们有媒资库（乐视视频音频本身内容）和全网作品库（外部视频音频内容），数据量级都在千万级。我们UV,PV,CV,VV都是保密的。所以作为一个合格的 ...
-                    </p>
-                    <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/xiexj/" class="lightblue">静儿1986</a>
-                        发布于 2017-06-26 06:21
-                        <span class="article_comment"><a href="http://www.cnblogs.com/xiexj/p/7071939.html#commentform"
-                                                         title="2017-06-26 14:01" class="gray">
-        评论(16)</a></span><span class="article_view"><a href="http://www.cnblogs.com/xiexj/p/7071939.html" class="gray">阅读(1438)</a></span>
-                    </div>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="post_item">
-                <div class="digg">
-                    <div class="diggit" onclick="DiggPost(&#39;onepixel&#39;,7078617,256889,1)">
-                        <span class="diggnum" id="digg_count_7078617">4</span>
-                    </div>
-                    <div class="clear"></div>
-                    <div id="digg_tip_7078617" class="digg_tip"></div>
-                </div>
-                <div class="post_item_body">
-                    <h3><a class="titlelnk" href="http://www.cnblogs.com/onepixel/p/7078617.html" target="_blank">HTML5动画API——
-                        requestAnimationFrame</a></h3>
-                    <p class="post_item_summary">
-                        <a href="http://www.cnblogs.com/onepixel/" target="_blank"><img width="48" height="48"
-                                                                                        class="pfs"
-                                                                                        src="{{asset('imges/20151205235751.png')}}"
-                                                                                        alt=""></a>
-                        在Web应用中，实现动画效果的方法比较多，Javascript 中可以通过定时器 setTimeout 来实现，css3 可以使用&nbsp;transition 和 animation
-                        来实现，html5 中的 canvas 也可以实现。除此之外，html5 还提供一个专门用于请求动画的API，即 requ ...
-                    </p>
-                    <div class="post_item_foot">
-                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">一像素</a>
-                        发布于 2017-06-26 00:26
+                        <a href="http://www.cnblogs.com/onepixel/" class="lightblue">{{$v->author}}</a>
+                        发布于 {{$v->addtime}}
                         <span class="article_comment"><a
                                 href="http://www.cnblogs.com/onepixel/p/7078617.html#commentform" title="" class="gray">
-        评论(0)</a></span><span class="article_view"><a href="http://www.cnblogs.com/onepixel/p/7078617.html"
-                                                      class="gray">阅读(189)</a></span></div>
+                       {{$v->author}}</a></span><span class="article_view"></span></div>
                 </div>
                 <div class="clear"></div>
             </div>
-
+               @endforeach
 
         </div>
         <script>editorPickStat();
@@ -576,25 +406,7 @@
                                                                                  onclick="return google_search();">
                 </div>
             </div>
-          
-       
 
-                <div id="cnblogs_b4" class="sidebar-image"><a
-                        href="https://cn.udacity.com/dand/?utm_source=cnblog&amp;utm_medium=referral&amp;utm_campaign=dand04"
-                        target="_blank"><img width="300" height="250"
-                                             src="{{asset('imges/24442-20170622211528820-758499309.jpg')}}"
-                                             alt="优达学城_FaceBook_0623"></a></div>
-
-											 
-				 
-					<form action="" method="get" enctype="multipart/form-data">
-                   
-                      头像:<input type="file" name="pic" value="头像"/><br/><br/>  
-					  姓名:<input type="name" name="uname" style="border:none"/><br/><br/> 
-					  博客年龄:<input type="date" name="enrolltime"/><br/> <br/>
-					
-                    </form>
-				
             </div>
 					
         </div>
