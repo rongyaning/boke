@@ -20,12 +20,25 @@
 <body>
 <div id="wrapper">
     <div id="hd_info">
-        
+    
+	
         <div id="cnts">
             <div id="site_nav_top">代码改变世界</div>
-            <div id="login_area"><span id="span_userinfo"><a href="http://home.cnblogs.com/u/ryn521/">花沐</a>·<a id="user_nav_blog_link" href="http://www.cnblogs.com/ryn521/">我的博客</a><span id="user_nav_blog_split">·</span><a href="http://msg.cnblogs.com/">短消息<span id="msg_count"></span></a>·<a href="http://home.cnblogs.com/set/">设置</a>·<a href="#" onclick="logout();return false">退出</a><span id="current_spaceId" style="display:none">1187366</span></span></div>
+            <div id="login_area">
+         
+			<span id="span_userinfo"><a href=""></a>
+        
+			<a id="user_nav_blog_link" href="http://www.cnblogs.com/ryn521/">我的博客</a>	
+			<span id="user_nav_blog_split">·</span><a href="http://msg.cnblogs.com/">短消息
+			<span id="msg_count"></span></a>·<a href="http://home.cnblogs.com/set/">设置</a>·
+			<a href="/home" onclick="logout();return false">退出</a>
+			<span id="current_spaceId" style="display:none">1187366</span></span></div>
+			
             <div class="clear"></div>
+			
         </div>
+        </div>
+		 
     </div>
     <div id="header">
         <p class="h_r_3"></p>
@@ -45,12 +58,14 @@
         <p class="h_r_2"></p>
         <p class="h_r_3"></p>
     </div>
+	
     <div id="nav_menu">
         <a href="https://home.cnblogs.com/">园子</a>
         <a href="https://wz.cnblogs.com/">收藏</a>
         <a href="http://kb.cnblogs.com/">知识库</a>
         <a href="http://zzk.cnblogs.com/">找找看</a>
     </div>
+						
     <div id="main">
         <div class="post_nav_block_wrapper">
           
@@ -72,7 +87,7 @@
 
      
 
-                @foreach($list as $v)
+                @foreach ($art as $v)
                 <div class="post_item_body">
                     <h3><a class="titlelnk" href="http://www.cnblogs.com/onepixel/p/7078617.html" target="_blank">{{$v->title}}</a></h3>
                     <p class="post_item_summary">
@@ -89,7 +104,7 @@
                 </div>
                 <div class="clear"></div>
             </div>
-               @endforeach
+          @endforeach
 
         </div>
         <script>editorPickStat();
@@ -408,9 +423,9 @@
             </div>
 
             </div>
-					
+                    
         </div>
-				
+                
     </div>
     
     <div id="footer">

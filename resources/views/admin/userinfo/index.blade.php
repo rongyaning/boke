@@ -3,12 +3,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            信息输出表
+            用户信息表
             <small>preview of simple tables</small>
           </h1>
           <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="#">用户信息</a></li>
+            <li><a href="{{url('admin')}}"><i class="fa fa-dashboard"></i> 首页</a></li>
+            <li><a href="{{url('admin/userinfo')}}">用户信息</a></li>
             <li class="active">列表</li>
           </ol>
         </section>
@@ -24,29 +24,39 @@
                 <div class="box-body">
                   <table class="table table-bordered">
                     <tr>
-                      <th style="width:60px">学号</th>
-                      <th>姓名</th>
+                      <th style="width:60px">ID</th>
+                      <th>用户id</th>
+                      <th>用户名</th>
+                      
+                      <th>年龄</th> 
                       <th>性别</th>
-                      <th>年龄</th>
-                      <th>班级</th>
-                      <th style="width: 100px">操作</th>
+                      <th>图片</th>
+                      
+                      <th>邮箱</th>
+                      <th>注册时间</th>
+                      <!--<th style="width: 100px">操作</th>-->
                     </tr>
                      @foreach($list as $v)
                     <tr>
                       <td>{{$v->id}}</td>
-                      <td>{{$v->articleid}}</td>
-                      <td>{{$v->content}}</td>       
-                      <td>{{$v->disTime}}</td>
                       <td>{{$v->userid}}</td>
-                      <td>{{$v->status}}</td>  
-                      <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
-                      <!--<button class="btn btn-xs btn-primary">编辑</button>--> </td>
+                      <td>{{$v->uname}}</td> 
+                      <td>{{$v->age}}</td>       
+                      <td>{{$v->sex}}</td>
+                      <
+                      <td>{{$v->pic}}</td>
+                      
+                      
+                      <td>{{$v->email}}</td>
+                      <td>{{$v->enrolltime}}</td>
+                      <!--<td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
+                      <button class="btn btn-xs btn-primary">编辑</button> </td>-->
                     </tr>
                     @endforeach
                    
                   </table>
                 </div><!-- /.box-body -->
-                <!--<div class="box-footer clearfix">
+                <div class="box-footer clearfix">
                   <ul class="pagination pagination-sm no-margin pull-right">
                     <li><a href="#">&laquo;</a></li>
                     <li><a href="#">1</a></li>
@@ -54,7 +64,8 @@
                     <li><a href="#">3</a></li>
                     <li><a href="#">&raquo;</a></li>
                   </ul>
-                </div>-->
+                </div>
+
               </div><!-- /.box -->
 
               
@@ -77,7 +88,7 @@
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
-                    $("#mydeleteform").attr("action","{{url('admin/goods')}}/"+id).submit(); 
+                    $("#mydeleteform").attr("action","{{url('admin/userinfo')}}/"+id).submit(); 
                 }
             }
       </script>

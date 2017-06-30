@@ -3,12 +3,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            管理员信息
+            文章类别表
             <small>preview of simple tables</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="#">管理员信息</a></li>
+            <li><a href="#">商品信息</a></li>
             <li class="active">列表</li>
           </ol>
         </section>
@@ -19,7 +19,7 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title"><i class="fa fa-th"></i> 管理员信息</h3>
+                  <h3 class="box-title"><i class="fa fa-th"></i> 文章类别管理</h3>
                   <div class="box-tools">
                     <form action="{{url('admin/stu')}}" method="get">
                     <div class="input-group" style="width: 150px;">
@@ -36,42 +36,18 @@
                     <tr>
                       <th style="width:160px">ID</th>
                       
-                      <th>管理员账号</th>
-<<<<<<< HEAD
-                      <th>管理员添加时间</th>
-                      <th>状态</th>
-=======
-                      <th>管理员登录时间</th>
-                      <th>管理员登陆IP</th>
->>>>>>> 8eef0081f52a16050f0d5555dc6addd359f3b84a
-                      
+                      <th>文章类别</th>
                      
                       <th style="width: 150px">操作</th>
                     </tr>
-<<<<<<< HEAD
-                    
-=======
->>>>>>> 8eef0081f52a16050f0d5555dc6addd359f3b84a
                     @foreach($list as $v)
                     <tr>
                       <td>{{$v->id}}</td>
-                      <td>{{$v->account}}</td>
-<<<<<<< HEAD
-                      <td>{{$v->addtime}}</td>
-                      <td>@if($v->status==0)启用@elseif($v->status==1)禁用@endif</td> 
-                     
-                      
-                      <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
-                      <a href="{{URL('admin/adminer')}}/{{$v->id}}/edit">编辑</a>
- 
-=======
-                      <td>{{$v->loginTime}}</td>
-                      <td>{{$v->loginIP}}</td>
+                      <td>{{$v->title}}</td>
                       
                       <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
                       <button class="btn btn-xs btn-primary">编辑</button> 
-                      
->>>>>>> 8eef0081f52a16050f0d5555dc6addd359f3b84a
+                      <button class="btn btn-xs btn-primary">添加子栏目</button>
                       </td>
                     </tr>
                     @endforeach
@@ -102,11 +78,7 @@
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
-<<<<<<< HEAD
-                    $("#mydeleteform").attr("action","{{url('admin/adminer')}}/"+id).submit(); 
-=======
                     $("#mydeleteform").attr("action","{{url('admin/goods')}}/"+id).submit(); 
->>>>>>> 8eef0081f52a16050f0d5555dc6addd359f3b84a
                 }
             }
       </script>

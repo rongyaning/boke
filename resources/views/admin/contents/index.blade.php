@@ -3,12 +3,12 @@
         <!-- Content Header (Page header) -->
         <section class="content-header">
           <h1>
-            管理员信息
-            <small>preview of simple tables</small>
+            文章内容显示
+            <small>Review list</small>
           </h1>
           <ol class="breadcrumb">
             <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-            <li><a href="#">管理员信息</a></li>
+            <li><a href="#">文章列表信息</a></li>
             <li class="active">列表</li>
           </ol>
         </section>
@@ -19,11 +19,12 @@
             <div class="col-md-12">
               <div class="box">
                 <div class="box-header with-border">
-                  <h3 class="box-title"><i class="fa fa-th"></i> 管理员信息</h3>
+                  <h3 class="box-title"><i class="fa fa-th"></i> 文章信息</h3>
                   <div class="box-tools">
                     <form action="{{url('admin/stu')}}" method="get">
+          
                     <div class="input-group" style="width: 150px;">
-                      <input type="text" name="name" class="form-control input-sm pull-right" placeholder="学员姓名"/>
+                      <input type="text" name="name" class="form-control input-sm pull-right" placeholder="文章id"/>
                       <div class="input-group-btn">
                         <button class="btn btn-sm btn-default"><i class="fa fa-search"></i></button>
                       </div>
@@ -34,50 +35,36 @@
                 <div class="box-body">
                   <table class="table table-bordered">
                     <tr>
-                      <th style="width:160px">ID</th>
-                      
-                      <th>管理员账号</th>
-<<<<<<< HEAD
-                      <th>管理员添加时间</th>
-                      <th>状态</th>
-=======
-                      <th>管理员登录时间</th>
-                      <th>管理员登陆IP</th>
->>>>>>> 8eef0081f52a16050f0d5555dc6addd359f3b84a
-                      
-                     
-                      <th style="width: 150px">操作</th>
+                      <th width="100">ID</th>
+                      <th width="1000">标题</th>
+                      <th width="500">头像</th>
+                      <th width="500">作者</th>
+                      <th>内容</th>
                     </tr>
-<<<<<<< HEAD
-                    
-=======
->>>>>>> 8eef0081f52a16050f0d5555dc6addd359f3b84a
                     @foreach($list as $v)
                     <tr>
                       <td>{{$v->id}}</td>
-                      <td>{{$v->account}}</td>
-<<<<<<< HEAD
-                      <td>{{$v->addtime}}</td>
-                      <td>@if($v->status==0)启用@elseif($v->status==1)禁用@endif</td> 
+                      <td>{{$v->title}}</td>
+                      <td>{{$v->cid}}</td>
+                      <td>{{$v->author}}</td>
+                      <td><textarea cols="120" rows="20" contenteditable="true">{{ $v->content }}</textarea></td>
                      
-                      
-                      <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
-                      <a href="{{URL('admin/adminer')}}/{{$v->id}}/edit">编辑</a>
- 
-=======
-                      <td>{{$v->loginTime}}</td>
-                      <td>{{$v->loginIP}}</td>
-                      
-                      <td><button onclick="doDel({{$v->id}})" class="btn btn-xs btn-danger">删除</button> 
-                      <button class="btn btn-xs btn-primary">编辑</button> 
-                      
->>>>>>> 8eef0081f52a16050f0d5555dc6addd359f3b84a
-                      </td>
+                    
                     </tr>
                     @endforeach
-                  
-                   
-                  </table>
+                  </table><br/><br/><br/>
+                <div class="btn-group" id="color" data-toggle="buttons">
+                  <label class="btn btn-default">
+                      <input type="radio" class="toggle" value="1">通过
+                  </label>
+                   <label class="btn btn-default">
+                      <input type="radio" class="toggle" value="2">未通过
+                  </label>
+                </div>
+
+                <div>
+                  <button type="button" class="btn btn-success">通过发布</button><br/><br/>
+                  <button type="button" class="btn btn-danger">未通过驳回</button>
                 </div><!-- /.box-body -->
                 <div class="box-footer clearfix">
                  
@@ -102,11 +89,7 @@
       <script type="text/javascript">
             function doDel(id){
                 if(confirm('确定要删除吗？')){
-<<<<<<< HEAD
-                    $("#mydeleteform").attr("action","{{url('admin/adminer')}}/"+id).submit(); 
-=======
                     $("#mydeleteform").attr("action","{{url('admin/goods')}}/"+id).submit(); 
->>>>>>> 8eef0081f52a16050f0d5555dc6addd359f3b84a
                 }
             }
       </script>

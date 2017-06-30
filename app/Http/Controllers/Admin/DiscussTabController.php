@@ -18,14 +18,19 @@ class DiscusstabController extends Controller
     public function index()
     {
         //
-
-       $list = Discusstab::get(); //5条每页浏览
-      
-       //遍历当前数据并添加评论名称
-     
-       return view("admin.Discusstab.index",['list'=>$list]);
-
-		//return view("admin.ping.index");
+		$db = \DB::table("Discusstab");
+       
+       //判断并封装搜索条件
+       $params = array();
+       if(!empty($_GET['articleid'])){
+           $db->where("articleid","like","%{$_GET['articleid']}%");
+           $params['articleid'] = $_GET['articleid']; //维持搜索条件
+       }
+       
+       // $list = $db->get(); //获取全部
+       $list = $db->orderBy("id",'desc')->paginate(5); //5条每页浏览
+        
+       return view("admin.discusstab.index",['list'=>$list,'params'=>$params]);   
     }
 
     /**
@@ -36,9 +41,6 @@ class DiscusstabController extends Controller
     public function create()
     {
         //
-
-	
-
     }
 
     /**
@@ -72,6 +74,10 @@ class DiscusstabController extends Controller
     public function edit($id)
     {
         //
+		
+		$list = Discusstab::where('id',$id)->first(); //获取信息
+			return view("admin.discusstab.edit",["list"=>$list]);
+		
     }
 
     /**
@@ -84,6 +90,17 @@ class DiscusstabController extends Controller
     public function update(Request $request, $id)
     {
         //
+		
+        $data = $request->only("status");
+        
+        $id = \DB::table("discusstab")->where("id",$id)->update($data);
+        
+        if($id>0){
+            return redirect('admin/discusstab');
+        }else{
+            return back()->with("err","修改失败!");
+        }
+         
     }
 
     /**
@@ -94,6 +111,7 @@ class DiscusstabController extends Controller
      */
     public function destroy($id)
     {
-        //
+	    discusstab::where('id',$id)->delete();
+        return redirect('admin/discusstab');
     }
 }

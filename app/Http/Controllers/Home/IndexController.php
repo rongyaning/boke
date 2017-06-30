@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Home;
 use App\Model\Article;
+use App\Model\Userinfo;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
+//use App\Http\Controllers\Home\userinfo;
 class IndexController extends Controller
 {
 
@@ -15,9 +16,11 @@ class IndexController extends Controller
      */
     public function index()
     {
-        $list = Article::get();
-        return view("home.index",['list'=>$list]);
-		//return view("Home.index");
+
+        $art = Article::get();
+	
+		return view("home.index",['art'=>$art]);
+
     }
 
     /**
@@ -28,6 +31,7 @@ class IndexController extends Controller
     public function create()
     {
         //
+		
     }
 
     /**

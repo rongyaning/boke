@@ -1,27 +1,33 @@
 <?php
 
-namespace App\Http\Controllers\Home;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Model\Userinfo;
+use App\Model\Contents;
 
-
-class PersonalController extends Controller
+class ContentsController extends Controller
 {
-    
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
-	{
-		$list = Userinfo::all(); 
-		return view("home.personal.index",['list'=>$list]);
-	
-	}
-
-
-	 public function create()
     {
-        //加载添加
-        return view("home.personal.index");
+        //
+        $list = Contents::get();
+        return view("admin.Contents.index",["list"=>$list]);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -32,10 +38,7 @@ class PersonalController extends Controller
      */
     public function store(Request $request)
     {
-        //执行添加，判断是否有值，如果有不做任何修改
-        //获取指定的部分数据
-        $data = $request->only("pic","uname","email","state");
-    
+        //
     }
 
     /**
@@ -57,7 +60,7 @@ class PersonalController extends Controller
      */
     public function edit($id)
     {
-        //加载修改页面
+        //
     }
 
     /**
@@ -69,7 +72,7 @@ class PersonalController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //执行修改，将修改后数据传到数据库
+        //
     }
 
     /**
@@ -82,7 +85,4 @@ class PersonalController extends Controller
     {
         //
     }
-
-
-	
 }

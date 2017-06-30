@@ -305,7 +305,9 @@
             <div class="pull-left info">
               <p></p>
 
-              <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+
+              <a href="#"><i class="fa fa-circle text-success"></i> 在线</a> &nbsp;&nbsp;
+              <a href="{{URL('admin/logout')}}">退出</a>
             </div>
           </div>
           <!-- search form -->
@@ -350,7 +352,9 @@
               <ul class="treeview-menu">
                 <li><a href="{{url('admin/articletype')}}"><i class="fa fa-circle-o"></i> 文章类别</a></li>
                 <li><a href="{{url('admin/articletype/create')}}"><i class="fa fa-circle-o"></i> 添加类别</a></li>
-                <li><a href=""><i class="fa fa-circle-o"></i> 文章审核</a></li>
+                <li><a href="{{url('admin/article')}}"><i class="fa fa-circle-o"></i> 文章审核</a></li>
+
+
               
               </ul>
             </li>
@@ -363,9 +367,11 @@
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
               <ul class="treeview-menu">
-                <li><a href="{{url('admin/discusstab')}}"><i class="fa fa-circle-o"></i> 评论管理</a></li>
+
+
+                <li><a href="{{url('admin/discussTab')}}"><i class="fa fa-circle-o"></i> 评论管理</a></li>
 				<li><a href="{{url('admin/collection')}}"><i class="fa fa-circle-o"></i> 收藏管理</a></li>
-              
+
               </ul>
             </li>
             <li class="treeview">
@@ -443,8 +449,8 @@
     
     <!-- AdminLTE 用于演示目的 -->
     <script src="{{asset('myadmin/dist/js/demo.js')}}" type="text/javascript"></script>
-    
-    @if(session("err"))
+
+	 @if(session("err"))
         <script type="text/javascript">
             Modal.alert({msg: "{{session('err')}}",title: ' 信息提示',btnok: '确定',btncl:'取消'});
         </script>
@@ -452,4 +458,5 @@
     
     @yield('myscript')
   </body>
+  
 </html>

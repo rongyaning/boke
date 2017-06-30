@@ -28,7 +28,6 @@ class AdminerController extends Controller
      */
     public function create()
     {
-        
         return view("admin.adminer.create");
     }
 
@@ -39,8 +38,7 @@ class AdminerController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        
+    {  
 		//$db = new Adminer;
         //表单验证
         $this->validate($request, [
@@ -71,7 +69,6 @@ class AdminerController extends Controller
 		$InsertNotice->save();
 		 */
 		return redirect("admin/adminer");
-  
     }
 
     /**
@@ -136,5 +133,6 @@ class AdminerController extends Controller
         Adminer::where('id','=',$id)->delete();
         //$db->delete($id);
         return redirect("admin/adminer");
+
     }
 }

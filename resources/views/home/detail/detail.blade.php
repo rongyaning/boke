@@ -3,7 +3,8 @@
 <html lang="zh-cn"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<title>
 			博客后台管理 - 博客园</title>
-			<link rel="stylesheet" type="text/css" href="{{asset('css/admin.css')}}">
+
+			<link rel="stylesheet" type="text/css" href="{{asset('css/home.css')}}">
 			<script src="{{asset('js/jquery.js')}}" type="text/javascript"></script>
             <script src="{{asset('js/json2.js')}}" type="text/javascript"></script>      
             <script type="text/javascript" src="{{asset('js/jquery.cnblogs.thickbox.js')}}"></script>
