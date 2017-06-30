@@ -46,5 +46,6 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
     Route::resource('collection',"Admin\CollectionController");//收藏
     Route::resource('log',"Admin\LogController");//日志
 
-    Route::resource('adminer',"Admin\AdminerController");//管理员
+    Route::resource('adminer',"Admin\AdminerController");//管理员\
+    Route::get("delete/{id}","Admin\ArticleController@destroy");//删除文章数据
 });
