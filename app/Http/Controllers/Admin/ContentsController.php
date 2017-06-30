@@ -1,14 +1,12 @@
 <?php
 
-
-//后台首页控制器
 namespace App\Http\Controllers\Admin;
-
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Model\Contents;
 
-class IndexController extends Controller
+class ContentsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,9 +15,9 @@ class IndexController extends Controller
      */
     public function index()
     {
-        //加载后台首页模板
-        return view("admin.index");
-
+        //
+        $list = Contents::get();
+        return view("admin.Contents.index",["list"=>$list]);
     }
 
     /**

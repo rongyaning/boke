@@ -54,11 +54,11 @@ Route::group(['prefix' => 'admin','middleware' => 'admin'], function () {
    
     Route::resource('log',"Admin\LogController");//日志
 
+
     Route::resource('adminer',"Admin\AdminerController");//管理员
-	//Route::get('collection',"Admin\CollectionController@update"); //提交编辑信息
-	//Route::post('collection',"Admin\ContentsController@destroy"); //删除编辑信息
-	//Route::get('del/{id}','Admin\CollectionController@destroy');//删除收藏
-	//Route::get('delete/{id}','Admin\DiscusstabController@destroy');//删除评论
 	
+
+    Route::get("delete/{id}","Admin\ArticleController@destroy");//删除文章数据
+
 });
-//Route::get('delete-records','StudDeleteController@index');
+

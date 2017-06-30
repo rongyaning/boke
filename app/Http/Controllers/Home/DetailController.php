@@ -10,6 +10,6 @@ class DetailController extends Controller
     //
     public function detail()
     {
-        return view("home.detail.detail");
+        return view("home.Detail.detail");
     }
 }
